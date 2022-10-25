@@ -1,9 +1,20 @@
 package com.in28minutes.unittesting.unittesting.model;
 
+import java.util.Objects;
+
 public class Address {
 
     private String city;
     private String street;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Address)) return false;
+        Address address = (Address) o;
+        return Objects.equals(city, address.city) && Objects.equals(street, address.street);
+    }
+
 
     public Address(String city, String street) {
         this.city = city;
