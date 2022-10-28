@@ -3,6 +3,7 @@ package com.in28minutes.unittesting.unittesting.business;
 import com.in28minutes.unittesting.unittesting.data.StudentDAO;
 import com.in28minutes.unittesting.unittesting.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,5 +22,15 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public List<Student> getAllStudent() {
         return studentDAO.getAllStudent();
+    }
+
+    @Override
+    public void deleteStudentByID(int id) {
+        studentDAO.deleteStudentByID(id);
+    }
+
+    @Override
+    public Integer findStudentNum() {
+        return studentDAO.findStudentNum();
     }
 }

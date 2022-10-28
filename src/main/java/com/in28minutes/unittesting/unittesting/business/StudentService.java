@@ -12,4 +12,8 @@ public interface StudentService {
 
     List<Student> getAllStudent();
 
+    public void deleteStudentByID(int id);
+
+    Integer findStudentNum();
+
 }

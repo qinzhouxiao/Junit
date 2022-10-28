@@ -1,12 +1,25 @@
 package com.in28minutes.unittesting.unittesting.model;
 
+import javax.validation.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class Student {
     private int id;
     private int age;
+
+    @NotBlank(message = "姓名不能为空")
     private String name;
+
+    @NotBlank(message = "性别不能为空")
     private String gender;
+
+    @Valid
+    @NotNull(message = "地址不能为空")
     private Address address;
 
+    public Student() {
+    }
 
     public Student(int age, String name, String gender) {
         this.age = age;
